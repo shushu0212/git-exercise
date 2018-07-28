@@ -3,12 +3,18 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Role</th>
   </tr>
+
   <% @users.each do |user| %>
     <tr>
       <td><%= link_to user.name, user_path(user) %></td>
+      <% if user.is_admin? %>
+      <td>Admin</td>
+      <% end %>
     </tr>
   <% end %>
+
 </table>
 
 
